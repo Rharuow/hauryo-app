@@ -16,7 +16,7 @@ const Wellcome = () => {
       "O seu cheiro me trás boas lembranças.",
       "As novas que estou construindo com você são muito especiais e eu guardo com muito carinho nas minhas memórias!",
       "Eu me apaixono por você a cada dia que se passa e descubro coisas novas sobre você.",
-      "Então se você viu essa mensagem até aqui, mande me responda no whatsapp da seguinte pergunta...",
+      "Então se você viu essa mensagem até aqui, me responda no whatsapp da seguinte pergunta...",
       "Você acredita verdadeiramente em tudo o que eu digo a você sobre o que eu sinto?",
       "Bem, é isso minha flor de Cerejeira. Te espero amanhã, depois de amanhã e pelo resto de nossas vidas!",
     ],
