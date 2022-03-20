@@ -16,7 +16,7 @@ const Home: NextPage = () => {
   const onSubmit = (data: { secret: string }) => {
     console.log(data.secret);
     if (data.secret === "Depois de amanhã e pelo resto de nossas vidas!") {
-      router.push("./welcome");
+      router.push("./wellcome");
     } else
       Swal.fire({
         title: "Ihhhh!",
