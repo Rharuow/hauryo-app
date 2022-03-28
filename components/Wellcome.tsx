@@ -2,29 +2,28 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import TypeAnimation from "react-type-animation";
+import Emoji from 'a11y-react-emoji'
 
 const Wellcome = () => {
   const [paragraph, setParagraph] = useState<number>(0);
   const [buttonText, setButtonText] = useState("Próxima");
   const content = {
-    title: "Bem vinda senhorita Haruyo!",
+    title: "Assim como a primavera, vc voltou!",
     body: [
-      "Estou muito feliz que vc esteja aqui.",
-      "Espero que sua viagem esteja ótima!",
-      "Fiz esse pequeno site para que eu possa mostrar o quanto gosto de você!",
-      "Ontem você não gostou quando usei a palavra 'nostálgica' quando me referi ao seu cheiro, mas era a palavra certa a se usar!",
-      "O seu cheiro me trás boas lembranças.",
-      "As novas que estou construindo com você são muito especiais e eu guardo com muito carinho nas minhas memórias!",
-      "Eu me apaixono por você a cada dia que se passa e descubro coisas novas sobre você.",
-      "Então se você viu essa mensagem até aqui, me responda no whatsapp da seguinte pergunta...",
-      "Você acredita verdadeiramente em tudo o que eu digo a você sobre o que eu sinto?",
-      "Bem, é isso minha flor de Cerejeira. Te espero amanhã, depois de amanhã e pelo resto de nossas vidas!",
+      "O que será que o seu amante preparou pra você agora?",
+      "Tenho certeza que é algo incrível!",
+      "Vc ta do lado dele? Olha pra ele antes de ir pra próxima mensagem...",
+      "Certeza que esse beijo foi doce, não foi?",
+      "Bem, ele tem algo pra lhe falar...",
+      "Mas tem medo do que vc vai responder, acredita?",
+      "Bem, ele me pediu pra vim aqui e te falar que pela primeira vez ele tem algo a dizer a vc, olhe pra ele de novo!",
+      "Por fim, ele quer saber se vc quer...",
     ],
   };
 
   const handleText = () => {
     setParagraph((prev) => ++prev);
-    if (paragraph + 1 === content.body.length - 1) setButtonText("Acabou! :(");
+    if (paragraph + 1 === content.body.length - 1) setButtonText("Ansiosa?");
   };
 
   const backText = () => {
@@ -38,9 +37,8 @@ const Wellcome = () => {
       </h1>
       <div className="d-flex w-100 justify-content-center">
         <img
-          src={`./stichhappy${
-            paragraph <= 5 ? paragraph : Math.floor(Math.random() * 6)
-          }.png`}
+          src={`./stichhappy${paragraph <= 5 ? paragraph : paragraph === content.body.length - 1 ? 5 : Math.floor(Math.random() * 6)
+            }.png`}
           width={150}
           alt="stitch happy"
         />
@@ -112,7 +110,7 @@ const Wellcome = () => {
           onClick={() => handleText()}
           disabled={paragraph === content.body.length - 1}
         >
-          {buttonText}
+          {buttonText} {paragraph === content.body.length - 1 && <Emoji symbol="💕" label="love" />}
         </Button>
         <Button
           variant="warning"
